@@ -1,5 +1,5 @@
 import { useMoralis } from "react-moralis";
-import { useERC20Balance } from "../hooks/useERC20Balance";
+import { useERC20Balance } from "react-moralis";
 import { Skeleton, Table } from "antd";
 import { getEllipsisTxt } from "../helpers/formatters";
 const styles = {

@@ -1,4 +1,3 @@
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 import Blockie from "./Blockie";
@@ -26,7 +25,7 @@ const styles = {
 
 function Account() {
   const { authenticate, isAuthenticated, logout } = useMoralis();
-  const { walletAddress, chainId } = useMoralisDapp();
+  const { walletAddress, chainId } = useMoralis();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   if (!isAuthenticated) {

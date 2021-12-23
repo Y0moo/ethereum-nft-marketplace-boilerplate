@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
+import { useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "../../helpers/formatters";
 import Blockie from "../Blockie";
 import "./identicon.css";
@@ -17,7 +17,7 @@ const styles = {
 };
 
 function Address(props) {
-  const { walletAddress } = useMoralisDapp();
+  const { walletAddress } = useMoralis();
   const [address, setAddress] = useState();
   const [isClicked, setIsClicked] = useState(false);
 

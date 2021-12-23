@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMoralis, useMoralisQuery } from "react-moralis";
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+
 import { Table, Tag, Space } from "antd";
 import { PolygonCurrency} from "./Chains/Logos";
 import moment from "moment";
@@ -13,7 +13,7 @@ const styles = {
 };
 
 function NFTMarketTransactions() {
-  const { walletAddress } = useMoralisDapp();
+  const { walletAddress } = useMoralis();
   const { Moralis } = useMoralis();
   const queryItemImages = useMoralisQuery("ItemImages");
   const fetchItemImages = JSON.parse(

@@ -1,4 +1,4 @@
-import { useNativeBalance } from "hooks/useNativeBalance";
+import { useNativeBalance } from "react-moralis";
 import { n4 } from "helpers/formatters";
 
 function NativeBalance(props) {

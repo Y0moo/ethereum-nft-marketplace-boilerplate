@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { Card, Image, Tooltip, Modal, Input, Spin } from "antd";
-import { useNFTBalance } from "hooks/useNFTBalance";
+import { useNFTBalances } from "react-moralis";
 import { FileSearchOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
 const { Meta } = Card;
@@ -21,8 +20,8 @@ const styles = {
 };
 
 function NFTBalance() {
-  const { NFTBalance } = useNFTBalance();
-  const { chainId, marketAddress, contractABI } = useMoralisDapp();
+  const { NFTBalance } = useNFTBalances();
+  const { chainId, marketAddress, contractABI } = useMoralis();
   const { Moralis } = useMoralis();
   const [visible, setVisibility] = useState(false);
   const [nftToSend, setNftToSend] = useState(null);

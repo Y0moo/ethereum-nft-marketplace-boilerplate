@@ -5,7 +5,7 @@ import { useMoralis, useMoralisQuery, useNewMoralisObject } from "react-moralis"
 import { Card, Image, Tooltip, Modal, Badge, Alert, Spin } from "antd";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
 import { FileSearchOutlined, RightCircleOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+
 import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
 const { Meta } = Card;
@@ -55,7 +55,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
   const [nftToBuy, setNftToBuy] = useState(null);
   const [loading, setLoading] = useState(false);
   const contractProcessor = useWeb3ExecuteFunction();
-  const { chainId, marketAddress, contractABI, walletAddress } = useMoralisDapp();
+  const { chainId, marketAddress, contractABI, walletAddress } = useMoralis();
   const nativeName = getNativeByChain(chainId);
   const contractABIJson = JSON.parse(contractABI);
   const { Moralis } = useMoralis();

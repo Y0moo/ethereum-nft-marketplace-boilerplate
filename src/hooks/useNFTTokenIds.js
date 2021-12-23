@@ -1,11 +1,11 @@
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+import { useMoralis } from "react-moralis";
 import { useEffect, useState } from "react";
 import { useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis";
 import { useIPFS } from "./useIPFS";
 
 export const useNFTTokenIds = (addr) => {
   const { token } = useMoralisWeb3Api();
-  const { chainId } = useMoralisDapp();
+  const { chainId } = useMoralis();
   const { resolveLink } = useIPFS();
   const [NFTTokenIds, setNFTTokenIds] = useState([]);
   const [totalNFTs, setTotalNFTs] = useState()

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useChain from "hooks/useChain";
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+import { useMoralis } from "react-moralis";
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { AvaxLogo, PolygonLogo, BSCLogo, ETHLogo } from "./Logos";
@@ -81,7 +81,7 @@ const menuItems = [
 
 function Chains() {
   const { switchNetwork } = useChain();
-  const { chainId } = useMoralisDapp();
+  const { chainId } = useMoralis();
   const [selected, setSelected] = useState({});
 
   useEffect(() => {

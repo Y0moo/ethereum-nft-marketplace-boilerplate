@@ -1,11 +1,11 @@
 import { Select } from 'antd';
-import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+import { useMoralis } from "react-moralis";
 import { getCollectionsByChain } from "helpers/collections";
 
 
 function SearchCollections({setInputValue}){
     const { Option } = Select;
-    const { chainId } = useMoralisDapp();
+    const { chainId } = useMoralis();
     const NFTCollections = getCollectionsByChain(chainId);
     
     
